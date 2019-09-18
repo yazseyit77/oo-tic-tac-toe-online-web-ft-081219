@@ -4,7 +4,7 @@ class TicTacToe
     @board = board || Array.new(9, " ")
   end
 
-    def play
+  def play
     while over? == false
       turn
     end
