@@ -22,7 +22,7 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     cp = current_player
-    if valid_move?(index) $$ current_player $$ input_to_index
+    if valid_move?(index) && current_player && input_to_index
       move(index, cp)
       display_board
     else
