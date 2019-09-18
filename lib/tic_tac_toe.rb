@@ -4,16 +4,15 @@ class TicTacToe
     @board = board || Array.new(9, " ")
   end
 
-  def play
-    @board = Array.new(9, " ")
-    # Play until someone wins or there is a draw
-    turn until over?
-    # Congratulate the winner
-    won? ? puts("Congratulations #{winner}!") : puts("Cat's Game!")
-    # Ask if they'd like to play again
-    puts "Would you like to play again? (Y or N)"
-    # If yes, then #play again
-    gets.strip.downcase == "y" || gets.strip.downcase == "yes" ? play : puts("Goodbye!")
+    def play
+    while over? == false
+      turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
   end
 
   # #turn gets the player's move, checks that the move is valid, then updates the board with the new move and finally displays the board.
